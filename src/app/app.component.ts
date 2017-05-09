@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,12 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
 
-  constructor() {
+  isLogin: boolean = false;
+
+  constructor(
+    private router: Router
+  ) {
+    // TODO could be improved by using different <router-outlet>s
+    router.events.subscribe((route: any) => this.isLogin = route.url === '' || route.url === '/login');
   }
 }
