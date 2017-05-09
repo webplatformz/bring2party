@@ -12,5 +12,11 @@
 	"display": "standalone",
 	"orientation": "natural",
 	"background_color": "#FFFFFF",
-	"theme_color": "#3F51B5"
+	"theme_color": "#3F51B5",
+  "related_applications": [
+    {
+      "platform": "play",
+      "id": "com.zuehlke.webdev.bring2party"
+    }
+  ]
 }
