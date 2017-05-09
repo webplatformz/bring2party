@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "sw": "sw-precache --root=dist --config=sw-precache-config.js",
-    "app": "ng build --aot --prod && npm run sw && json-server db/db.json --static ./dist --port 4200"
+    "app": "ng build --aot --prod && npm run sw && node server.js"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +25,8 @@
     "@angular/platform-browser-dynamic": "4.0.0",
     "@angular/router": "4.0.0",
     "core-js": "2.4.1",
+    "express": "^4.15.2",
+    "json-server": "0.10.0",
     "rxjs": "5.1.0",
     "zone.js": "0.8.4"
   },
@@ -36,7 +38,6 @@
     "codelyzer": "2.0.0",
     "jasmine-core": "2.5.2",
     "jasmine-spec-reporter": "3.2.0",
-    "json-server": "0.10.0",
     "karma": "1.4.1",
     "karma-chrome-launcher": "2.0.0",
     "karma-cli": "1.0.1",

@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PartiesComponent } from './parties.component';
+import {PartyService} from "../party.service";
+import {HttpModule} from "@angular/http";
 
 describe('PartiesComponent', () => {
   let component: PartiesComponent;
@@ -8,7 +10,9 @@ describe('PartiesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PartiesComponent ]
+      imports: [HttpModule],
+      declarations: [ PartiesComponent ],
+      providers: [PartyService]
     })
     .compileComponents();
   }));
