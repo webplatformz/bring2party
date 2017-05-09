@@ -40,7 +40,7 @@ export class PartyService {
   addParty(name: string): Observable<Party> {
     const headers = new Headers({'Content-Type': 'application/json'});
 
-    return this.http.post('/api/_parties', JSON.stringify({name}), {headers})
+    return this.http.post('/api/_parties', JSON.stringify(new Party(name)), {headers})
       .map(this.extractData)
       .catch(this.handleError);
   }
