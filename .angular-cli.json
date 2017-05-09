@@ -10,7 +10,8 @@
       "assets": [
         "favicon.ico",
         "service-worker.js",
-        "manifest.json"
+        "manifest.json",
+        "images"
       ],
       "index": "index.html",
       "main": "main.ts",

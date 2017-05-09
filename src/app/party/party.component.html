@@ -1,3 +1,5 @@
-<p>
-  party works!
-</p>
+<div *ngIf="party">
+  <h1>{{party.name}}</h1>
+</div>
+
+<button (click)="goBack()">Back</button>
