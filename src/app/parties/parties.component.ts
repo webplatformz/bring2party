@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PartyService } from "../shared/party.service";
 
 import { Party } from '../shared/party';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-parties',
@@ -12,17 +13,17 @@ export class PartiesComponent implements OnInit {
   title = 'Parties';
   parties: Party[];
 
-  constructor(private partyService: PartyService) { }
+  constructor(private partyService: PartyService,
+              private router : Router) { }
 
   ngOnInit() {
-    this.partyService.loadParties().subscribe(parties => this.parties = parties);
+    this.partyService.loadParties().subscribe(parties => this.parties = parties.reverse());
   }
 
   addParty(name: string) {
     this.partyService.addParty(name).subscribe(party =>{
-      console.log(JSON.stringify(party));
-      debugger;
-      this.parties.push(party);
+      this.parties.unshift(party);
+      this.router.navigateByUrl(`/party/${party.id}`);
     })
   }
 

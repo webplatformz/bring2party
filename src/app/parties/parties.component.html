@@ -1,12 +1,16 @@
 <h1>{{title}}</h1>
 
+<form>
+  <md-input-container>
+    <input mdInput #partyName name="partyName" type="text" placeholder="New Partyname">
+  </md-input-container>
+
+  <button md-raised-button color="primary"
+          (click)="addParty(partyName.value); partyName.value=''">Create Party
+  </button>
+</form>
+
 <md-list>
   <md-list-item *ngFor="let party of parties" [routerLink]="['/party', party.id]">{{party.name}}</md-list-item>
 </md-list>
 
-<div>
-  <label>Party name:</label> <input #partyName />
-  <button (click)="addParty(partyName.value); partyName.value=''">
-    Add
-  </button>
-</div>
