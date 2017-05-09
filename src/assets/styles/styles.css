@@ -1,5 +1,8 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+.mat-input-container {
+  width: 100%;
+}
 body {
   font-family: Roboto,Helvetica Neue,sans-serif;
 }
