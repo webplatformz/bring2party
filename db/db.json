@@ -1,0 +1,20 @@
+{
+  "parties": [
+    {
+      "id": "1",
+      "name": "Marco's Geburtstag"
+    },
+    {
+      "id": "2",
+      "name": "Payne's Hochzeit"
+    },
+    {
+      "id": "3",
+      "name": "Ben's Beförderung"
+    },
+    {
+      "id": "4",
+      "name": "Challenge Final Event"
+    }
+  ]
+}
