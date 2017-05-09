@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
-import {Http, Response} from "@angular/http";
+import {Http, Response, Headers} from "@angular/http";
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import { Party } from './party';
+import {Party} from './party';
 
 @Injectable()
 export class PartyService {
@@ -11,14 +11,16 @@ export class PartyService {
   constructor(private http: Http) {
   }
 
-  loadParties(): Promise<Party[]>{
-    return this.http.get('/api/_parties').toPromise()
-      .then(response => response.json() as Party[])
+  loadParties(): Observable<Party[]> {
+    return this.http.get('/api/_parties')
+      .map(this.extractData)
       .catch(this.handleError);
   }
 
-  loadPartyById(id:string): Promise<Party> {
-    return this.loadParties().then(parties => parties.find(party=>party.id == id));
+  loadPartyById(id: string): Observable<Party> {
+    return this.http.get(`/api/_parties/${id}`)
+      .map(this.extractData)
+      .catch(this.handleError);
   }
 
   private handleError(error: any) {
@@ -30,4 +32,16 @@ export class PartyService {
     return Observable.throw(errMsg);
   }
 
+  private extractData(res: Response) {
+    let body = res.json();
+    return body || {};
+  }
+
+  addParty(name: string): Observable<Party> {
+    const headers = new Headers({'Content-Type': 'application/json'});
+
+    return this.http.post('/api/_parties', JSON.stringify({name}), {headers})
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
 }

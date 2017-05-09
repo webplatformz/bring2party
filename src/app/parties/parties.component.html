@@ -3,3 +3,10 @@
 <ul>
   <li *ngFor="let party of parties" [routerLink]="['/party', party.id]">{{party.name}}</li>
 </ul>
+
+<div>
+  <label>Party name:</label> <input #partyName />
+  <button (click)="addParty(partyName.value); partyName.value=''">
+    Add
+  </button>
+</div>

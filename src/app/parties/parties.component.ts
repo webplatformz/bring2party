@@ -15,7 +15,15 @@ export class PartiesComponent implements OnInit {
   constructor(private partyService: PartyService) { }
 
   ngOnInit() {
-    this.partyService.loadParties().then(parties => this.parties = parties);
+    this.partyService.loadParties().subscribe(parties => this.parties = parties);
+  }
+
+  addParty(name: string) {
+    this.partyService.addParty(name).subscribe(party =>{
+      console.log(JSON.stringify(party));
+      debugger;
+      this.parties.push(party);
+    })
   }
 
 }
