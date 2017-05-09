@@ -7,7 +7,7 @@ import { MaterialModule } from '@angular/material';
 import { MdInputModule, MdButtonModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { PartyService } from "./party.service";
+import { PartyService } from "./shared/party.service";
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { PartiesComponent } from './parties/parties.component';

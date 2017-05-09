@@ -1,20 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params }   from '@angular/router';
 import { Location }                 from '@angular/common';
-import { Party }                      from "../party";
-
-export const PARTIES: Party[] = [
-  { id: 11, name: 'Mr. Nice' },
-  { id: 12, name: 'Narco' },
-  { id: 13, name: 'Bombasto' },
-  { id: 14, name: 'Celeritas' },
-  { id: 15, name: 'Magneta' },
-  { id: 16, name: 'RubberMan' },
-  { id: 17, name: 'Dynama' },
-  { id: 18, name: 'Dr IQ' },
-  { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornado' }
-];
+import { Party }                      from "../shared/party";
+import {PartyService} from "../shared/party.service";
 
 @Component({
   selector: 'app-party',
@@ -27,12 +15,14 @@ export class PartyComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private partyService: PartyService
   ) { }
 
   ngOnInit() {
+
     this.route.params
-      .switchMap((params: Params) => PARTIES.filter(party => party.id === +params['id']))
+      .switchMap((params: Params) => this.partyService.loadPartyById(params['id']))
       .subscribe(party => this.party = party);
   }
 

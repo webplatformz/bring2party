@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router';
 
-import { User } from '../user';
+import { User } from '../shared/user';
 
 @Component({
   selector: 'app-login',

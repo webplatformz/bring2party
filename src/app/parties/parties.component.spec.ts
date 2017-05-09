@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PartiesComponent } from './parties.component';
-import {PartyService} from "../party.service";
+import {PartyService} from "../shared/party.service";
 import {HttpModule} from "@angular/http";
 
 describe('PartiesComponent', () => {

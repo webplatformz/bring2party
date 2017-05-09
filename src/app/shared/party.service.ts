@@ -3,7 +3,7 @@ import {Http, Response} from "@angular/http";
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-
+import { Party } from './party';
 
 @Injectable()
 export class PartyService {
@@ -11,15 +11,14 @@ export class PartyService {
   constructor(private http: Http) {
   }
 
-  loadParties() {
-    return this.http.get('./api/_parties')
-      .map(this.extractData)
+  loadParties(): Promise<Party[]>{
+    return this.http.get('/api/_parties').toPromise()
+      .then(response => response.json() as Party[])
       .catch(this.handleError);
   }
 
-  private extractData(res: Response) {
-    let body = res.json();
-    return body || [];
+  loadPartyById(id:string): Promise<Party> {
+    return this.loadParties().then(parties => parties.find(party=>party.id == id));
   }
 
   private handleError(error: any) {
