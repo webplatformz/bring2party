@@ -1,6 +1,73 @@
-<div *ngIf="party">
-  <h1>{{party.name}}</h1>
-</div>
-
-
 <button md-raised-button color="primary" (click)="goBack()">Back to Parties ...</button>
+
+<div *ngIf="party">
+
+  <h1>{{party.name}}</h1>
+
+  <form>
+
+    <h2>Party</h2>
+
+    <md-input-container>
+      <input mdInput [(ngModel)]="party.name" name="name" type="text" placeholder="Name">
+    </md-input-container>
+
+    <md-input-container>
+      <input mdInput [(ngModel)]="party.location.address" name="address" type="text" placeholder="Address">
+    </md-input-container>
+
+    <md-input-container>
+      <input mdInput [(ngModel)]="party.location.zip" name="zip" type="text" placeholder="Zip">
+    </md-input-container>
+
+    <md-input-container>
+      <input mdInput [(ngModel)]="party.location.city" name="city" type="text" placeholder="City">
+    </md-input-container>
+
+    <h2>Gifts</h2>
+
+    <md-list>
+
+      <md-list-item>
+
+        <md-input-container>
+          <input mdInput [(ngModel)]="itemName" name="name" type="text" placeholder="Name">
+        </md-input-container>
+
+        <md-input-container>
+          <input mdInput [(ngModel)]="itemCount" name="count" type="number" placeholder="Count">
+        </md-input-container>
+
+        <button md-raised-button color="primary" (click)="addNewItem()">Add item</button>
+
+      </md-list-item>
+
+      <md-list-item *ngFor="let item of party.items">
+
+        <md-input-container>
+          <input mdInput [(ngModel)]="item.name" name="name" type="text" placeholder="Name">
+        </md-input-container>
+
+        <md-input-container>
+          <input mdInput [(ngModel)]="item.count" name="count" type="number" placeholder="Count">
+        </md-input-container>
+
+      </md-list-item>
+
+    </md-list>
+
+    <h2>Persons</h2>
+
+    <md-list>
+      <md-list-item *ngFor="let person of party.persons">{{person.nickname}}</md-list-item>
+    </md-list>
+
+  </form>
+
+  <button md-raised-button color="primary" (click)="saveParty()">Save</button>
+
+  <button md-raised-button color="primary" (click)="cancelParty()">Cancel</button>
+
+  <button md-raised-button color="primary" (click)="goBack()">Back to Parties ...</button>
+
+</div>

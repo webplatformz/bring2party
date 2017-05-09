@@ -2,19 +2,43 @@
   "_parties": [
     {
       "id": "1",
-      "name": "Marco's Geburtstag"
+      "name": "Marco's Geburtstag",
+      "location": {
+        "address": "Zirkusstrasse 87a",
+        "zip": "3000",
+        "city": "Bern"
+      },
+      "items": []
     },
     {
       "id": "2",
-      "name": "Payne's Hochzeit"
+      "name": "Payne's Hochzeit",
+      "location": {
+        "address": "Kirchenweg 5",
+        "zip": "4500",
+        "city": "Solothurn"
+      },
+      "items": []
     },
     {
       "id": "3",
-      "name": "Ben's Beförderung"
+      "name": "Ben's Beförderung",
+      "location": {
+        "address": "Künstlergasse 14",
+        "zip": "8000",
+        "city": "Zürich"
+      },
+      "items": []
     },
     {
       "id": "4",
-      "name": "Challenge Final Event"
+      "name": "Challenge Final Event",
+      "location": {
+        "address": "Poststrasse 16",
+        "zip": "3000",
+        "city": "Bern"
+      },
+      "items": []
     }
   ]
 }
