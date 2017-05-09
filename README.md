@@ -22,7 +22,7 @@ $ npm install -g angular-cli
 
 Build it and run it with:
 ```sh
-npm run pwa
+npm run app
 ```
 
 ## Development
