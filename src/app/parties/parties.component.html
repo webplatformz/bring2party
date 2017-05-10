@@ -1,16 +1,20 @@
 <h1>{{title}}</h1>
 
-<form>
-  <md-input-container>
-    <input mdInput #partyName name="partyName" type="text" placeholder="New Partyname">
-  </md-input-container>
-
-  <button md-raised-button color="primary"
-          (click)="addParty(partyName.value); partyName.value=''">Create Party
+<form class="flex">
+  <div class="flex-container party-name-container">
+    <md-input-container class="party-name-input">
+      <input mdInput #partyName name="partyName" type="text" placeholder="New Partyname">
+    </md-input-container>
+  </div>
+  <button md-raised-button color="primary" (click)="addParty(partyName.value); partyName.value=''">Create Party
   </button>
 </form>
 
 <md-list>
-  <md-list-item *ngFor="let party of parties" [routerLink]="['/party', party.id]">{{party.name}}</md-list-item>
+  <md-list-item *ngFor="let party of parties" [routerLink]="['/party', party.id]" class="flex">{{party.name}}</md-list-item>
 </md-list>
+
+<div class="controls">
+  <button md-raised-button (click)="goBack()">Logout.</button>
+</div>
 

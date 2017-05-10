@@ -3,14 +3,16 @@
 
 <form>
 
-  <md-input-container>
+  <md-input-container class="full-width">
     <input mdInput [(ngModel)]="user.nickname" name="nickname" type="text" placeholder="Your name">
   </md-input-container>
 
-  <md-input-container>
+  <md-input-container class="full-width">
     <input mdInput [(ngModel)]="user.email" name="email" type="email" placeholder="Your email address">
   </md-input-container>
 
-  <button md-raised-button color="primary" (click)="gotoParties()">Let's Party!</button>
+  <div class="controls">
+    <button md-raised-button color="primary" (click)="gotoParties()">Let's Party!</button>
+  </div>
 
 </form>

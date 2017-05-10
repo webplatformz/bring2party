@@ -2,71 +2,95 @@
 
   <h1>{{party.name}}</h1>
 
-    <h2>Party</h2>
+  <h2>Party</h2>
 
-    <md-input-container>
-      <input mdInput [(ngModel)]="party.name" name="name" type="text" placeholder="Name">
-    </md-input-container>
-    <md-input-container>
-      <input mdInput [(ngModel)]="party.location.address" name="address" type="text" placeholder="Address">
-    </md-input-container>
-    <md-input-container>
-      <input mdInput [(ngModel)]="party.location.zip" name="zip" type="text" placeholder="Zip">
-    </md-input-container>
-    <md-input-container>
-      <input mdInput [(ngModel)]="party.location.city" name="city" type="text" placeholder="City">
-    </md-input-container>
+  <md-input-container>
+    <input mdInput [(ngModel)]="party.name" name="name" type="text" placeholder="Name">
+  </md-input-container>
 
-    <h2>Gifts</h2>
+  <md-input-container>
+    <input mdInput [(ngModel)]="party.location.address" name="address" type="text" placeholder="Address">
+  </md-input-container>
 
-    <md-list>
-      <md-list-item>
+  <md-input-container>
+    <input mdInput [(ngModel)]="party.location.zip" name="zip" type="text" placeholder="Zip">
+  </md-input-container>
+
+  <md-input-container>
+    <input mdInput [(ngModel)]="party.location.city" name="city" type="text" placeholder="City">
+  </md-input-container>
+
+  <md-input-container>
+    <input mdInput [(ngModel)]="party.date" name="date" type="datetime-local" placeholder="Date & Time">
+  </md-input-container>
+
+  <h2>Gifts</h2>
+
+  <md-list>
+
+    <md-list-item class="flex">
+      <div class="flex-container">
         <md-input-container>
           <input mdInput #newItemName name="newItemName" type="text" placeholder="Name">
         </md-input-container>
         <md-input-container>
           <input mdInput #newItemCount name="newItemCount" type="number" placeholder="Count">
         </md-input-container>
-        <button md-raised-button color="primary" (click)="addNewItem(newItemName.value, newItemCount.value); newItemName.value=''; newItemCount.value=''">Add item</button>
-      </md-list-item>
-      <md-list-item *ngFor="let item of party.items">
+      </div>
+      <button md-mini-fab (click)="addNewItem(newItemName.value, newItemCount.value); newItemName.value=''; newItemCount.value=''"><md-icon>add</md-icon>
+      </button>
+    </md-list-item>
+
+    <md-list-item *ngFor="let item of party.items" class="flex">
+      <div class="flex-container">
         <md-input-container>
           <input mdInput [(ngModel)]="item.name" type="text" placeholder="Name">
         </md-input-container>
         <md-input-container>
           <input mdInput [(ngModel)]="item.count" type="number" placeholder="Count">
         </md-input-container>
-        <button md-raised-button color="primary" (click)="removeItem(item);">Remove item</button>
-      </md-list-item>
-    </md-list>
+      </div>
+      <button md-mini-fab (click)="removeItem(item);"><md-icon>remove</md-icon></button>
+    </md-list-item>
 
-    <h2>Persons</h2>
+  </md-list>
 
-    <md-list>
-      <md-list-item>
+  <h2>Persons</h2>
+
+  <md-list>
+
+    <md-list-item class="flex">
+      <div class="flex-container">
         <md-input-container>
           <input mdInput #newPersonNickname name="newPersonNickname" type="text" placeholder="Nickname">
         </md-input-container>
         <md-input-container>
           <input mdInput #newPersonEmail name="newPersonEmail" type="email" placeholder="Email">
         </md-input-container>
-        <button md-raised-button color="primary" (click)="addNewPerson(newPersonNickname.value, newPersonEmail.value); newPersonNickname.value=''; newPersonEmail.value=''">Add person</button>
-      </md-list-item>
-      <md-list-item *ngFor="let person of party.persons">
+      </div>
+      <button md-mini-fab (click)="addNewPerson(newPersonNickname.value, newPersonEmail.value); newPersonNickname.value=''; newPersonEmail.value=''">
+        <md-icon>add</md-icon>
+      </button>
+    </md-list-item>
+
+    <md-list-item *ngFor="let person of party.persons" class="flex">
+      <div class="flex-container">
         <md-input-container>
           <input mdInput [(ngModel)]="person.nickname" type="text" placeholder="Nickname">
         </md-input-container>
         <md-input-container>
           <input mdInput [(ngModel)]="person.email" type="email" placeholder="Email">
         </md-input-container>
-        <button md-raised-button color="primary" (click)="removePerson(person);">Remove person</button>
-      </md-list-item>
-    </md-list>
+      </div>
+      <button md-mini-fab (click)="removePerson(person);"><md-icon>remove</md-icon></button>
+    </md-list-item>
 
-  <button md-raised-button color="primary" (click)="saveParty()">Save</button>
+  </md-list>
 
-  <button md-raised-button color="primary" (click)="cancelParty()">Cancel</button>
-
-  <button md-raised-button color="primary" (click)="goBack()">Back to Parties ...</button>
+  <div class="controls">
+    <button md-raised-button color="primary" (click)="saveParty()">Save Changes</button>
+    <button md-raised-button (click)="cancelParty()">Cancel Party</button>
+    <button md-raised-button (click)="goBack()">Back to Parties ...</button>
+  </div>
 
 </div>

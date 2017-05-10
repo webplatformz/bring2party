@@ -1,8 +1,40 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
-.mat-input-container {
-  width: 100%;
-}
+/* globals */
+
 body {
   font-family: Roboto,Helvetica Neue,sans-serif;
+}
+
+button {
+  margin-right: 10px;
+}
+
+/* generic elements */
+
+.flex {
+  display: flex;
+}
+
+.flex-container {
+  flex-grow: 2;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* concrete elements */
+
+.controls {
+  margin-top: 20px;
+  padding-top: 30px;
+  border-top: 1px solid black;
+}
+
+.party-name-container {
+  padding-right: 20px;
+}
+.party-name-input {
+  width: 100%;
 }

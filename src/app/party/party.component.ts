@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit }        from '@angular/core';
 import { ActivatedRoute, Params }   from '@angular/router';
 import { Location }                 from '@angular/common';
-import { Party }                      from "../shared/party";
-import { User }                      from "../shared/user";
-import { Item }                      from "../shared/item";
-import { PartyService } from "../shared/party.service";
+
+import { Party }                    from "../shared/party";
+import { User }                     from "../shared/user";
+import { Item }                     from "../shared/item";
+import { PartyService }             from "../shared/party.service";
 
 @Component({
   selector: 'app-party',
