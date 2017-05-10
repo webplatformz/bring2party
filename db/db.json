@@ -8,7 +8,39 @@
         "zip": "3000",
         "city": "Bern"
       },
-      "items": []
+      "items": [
+        {
+          "name": "Rueblisalat",
+          "count": 2,
+          "persons": [
+            {
+              "nickname": "Marco",
+              "email": "",
+              "count": 1
+            },
+            {
+              "nickname": "Sarah",
+              "email": "",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "name": "Chips",
+          "count": 3,
+          "persons": []
+        },
+        {
+          "name": "Erdnüssli",
+          "count": 1023,
+          "persons": []
+        },
+        {
+          "name": "Pouletwürstchen",
+          "count": 4,
+          "persons": []
+        }
+      ]
     },
     {
       "id": "2",
@@ -18,7 +50,33 @@
         "zip": "4500",
         "city": "Solothurn"
       },
-      "items": []
+      "items": [
+        {
+          "name": "Chips",
+          "count": 50,
+          "persons": []
+        },
+        {
+          "name": "Champagner",
+          "count": 20,
+          "persons": []
+        },
+        {
+          "name": "Bier",
+          "count": 20,
+          "persons": []
+        },
+        {
+          "name": "Rotwein",
+          "count": 10,
+          "persons": []
+        },
+        {
+          "name": "Weisswein",
+          "count": 10,
+          "persons": []
+        }
+      ]
     },
     {
       "id": "3",
@@ -28,7 +86,18 @@
         "zip": "8000",
         "city": "Zürich"
       },
-      "items": []
+      "items": [
+        {
+          "name": "Chips",
+          "count": 10,
+          "persons": []
+        },
+        {
+          "name": "Bier",
+          "count": 100,
+          "persons": []
+        }
+      ]
     },
     {
       "id": "4",
@@ -38,28 +107,18 @@
         "zip": "3000",
         "city": "Bern"
       },
-      "items": []
-    },
-    {
-      "name": "ljsadl kfjdsfkdsaf",
-      "location": {},
-      "items": [],
-      "persons": [],
-      "id": "r1Or6DyxZ"
-    },
-    {
-      "name": "lsd fjds jfsldkfjasdlkf jsdaf",
-      "location": {},
-      "items": [],
-      "persons": [],
-      "id": "SkpyAwklb"
-    },
-    {
-      "name": "dsfasdf asdf",
-      "location": {},
-      "items": [],
-      "persons": [],
-      "id": "ByzP0Pyg-"
+      "items": [
+        {
+          "name": "Bier",
+          "count": 10,
+          "persons": []
+        },
+        {
+          "name": "Burger",
+          "count": 10,
+          "persons": []
+        }
+      ]
     }
   ]
 }

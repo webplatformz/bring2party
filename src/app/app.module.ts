@@ -12,13 +12,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { PartiesComponent } from './parties/parties.component';
 import { PartyComponent } from './party/party.component';
+import { PartyGiftsComponent } from './party-gifts/party-gifts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     PartiesComponent,
-    PartyComponent
+    PartyComponent,
+    PartyGiftsComponent
   ],
   imports: [
     BrowserModule,

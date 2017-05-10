@@ -11,12 +11,14 @@ import { PartyService }       from "../shared/party.service";
   styleUrls: ['./parties.component.css']
 })
 export class PartiesComponent implements OnInit {
+
   title = 'Parties';
   parties: Party[];
 
-  constructor(private partyService: PartyService,
-              private location: Location,
-              private router : Router) { }
+  constructor(
+    private partyService: PartyService,
+    private location: Location,
+    private router : Router) { }
 
   ngOnInit() {
     this.partyService.loadParties().subscribe(parties => this.parties = parties.reverse());

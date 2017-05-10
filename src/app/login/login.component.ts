@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Router }            from '@angular/router';
+import { Component, OnInit }  from '@angular/core';
+import { Router }             from '@angular/router';
 
-import { User } from '../shared/user';
+import { User }               from '../shared/user';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +9,7 @@ import { User } from '../shared/user';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  title = 'Login';
+
   user: User;
 
   constructor(
