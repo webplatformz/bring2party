@@ -5,10 +5,14 @@
   <h1>{{party.name}}</h1>
 
   <ul>
+
     <li *ngFor="let item of party.items">
-      <div class="flex-container">
-        <span>{{item.name}}</span>
-        <span>{{getRemainingItemCount(item)}}</span>
+
+      <div class="flex">
+        <div class="flex-container">
+          <span>{{item.name}}</span>
+          <span>{{getRemainingItemCount(item)}}</span>
+        </div>
         <button md-mini-fab (click)="incrementCurrentUserItemCount(item)" *ngIf="hasRemainingItemCount(item)">
           <md-icon>add</md-icon>
         </button>
@@ -17,13 +21,16 @@
           <md-icon>remove</md-icon>
         </button>
       </div>
+
       <ul>
         <li *ngFor="let claim of item.claims">
-          <a href="mailto:{{claim.user.email}}">{{claim.user.nickname}}</a>
+          <a href="mailto:{{claim.user.email}}">{{getNickname(claim)}}</a>
           <span>{{claim.count}}</span>
         </li>
       </ul>
+
     </li>
+
   </ul>
 
 </div>

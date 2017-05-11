@@ -37,7 +37,7 @@ export class PartyGiftsComponent implements OnInit {
   getRemainingItemCount(item: Item): number {
     let claimedItemCount = 0;
     (item.claims || []).forEach(claim => { claimedItemCount += (claim.count || 0) });
-    return Math.max((item.count || 0) - claimedItemCount);
+    return (item.count || 0) - claimedItemCount;
   }
 
   incrementCurrentUserItemCount(item: Item): void {
@@ -70,6 +70,14 @@ export class PartyGiftsComponent implements OnInit {
 
   getCurrentUserClaim(item: Item): ClaimedItem {
     return item.claims.find(claim => this.userService.equals(claim.user));
+  }
+
+  getNickname(claim : ClaimedItem): string {
+    return (!claim || !claim.user || !claim.user.nickname || !claim.user.nickname.trim()) ? '<unknown>' : claim.user.nickname;
+  }
+
+  getEmail(claim : ClaimedItem): string {
+    return (!claim || !claim.user || !claim.user.email || !claim.user.email.trim()) ? '' : claim.user.email;
   }
 
 }

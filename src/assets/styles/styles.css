@@ -27,10 +27,6 @@ body {
   width: 100%;
 }
 
-.mat-mini-fab {
-  box-shadow: none;
-}
-
 /* concrete elements */
 
 .controls {
