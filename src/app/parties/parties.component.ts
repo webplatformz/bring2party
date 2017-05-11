@@ -19,11 +19,11 @@ export class PartiesComponent implements OnInit {
               private router : Router) { }
 
   ngOnInit() {
-    this.parties = this.partyService.getPartiesFromStore();
+    this.parties = this.partyService.getParties();
   }
 
   addParty(name: string) {
-    let newParty = this.partyService.createPartyToStore(name);
+    let newParty = this.partyService.createParty(name);
     this.parties.unshift(newParty);
     this.router.navigateByUrl(`/party/${newParty.uuid}`);
   }
@@ -31,11 +31,11 @@ export class PartiesComponent implements OnInit {
   sync() : void {
     console.log('Sync start');
     let operations = this.partyService.getOperationsFromStore();
-    operations.forEach(queuedItem => {
+    operations.forEach(queuedOperation => {
       //remove item if success or handle properly
-      if (queuedItem.operation === 'post') {
+      if (queuedOperation.method === 'post') {
         console.log('processing post Item from queue');
-        this.partyService.addParty(<Party>JSON.parse(queuedItem.item)).subscribe();
+        this.partyService.createPartyToRemote(queuedOperation.party).subscribe();
       }
     });
 
@@ -43,8 +43,8 @@ export class PartiesComponent implements OnInit {
     this.partyService.deleteAllOperations();
 
     //everything from local to server done... read all from server now
-    this.partyService.loadParties().subscribe(parties => {
-      this.partyService.savePartiesToStore(parties);
+    this.partyService.loadPartiesFromRemote().subscribe(parties => {
+      this.partyService.saveParties(parties);
       return this.parties = parties.reverse();
     });
   }

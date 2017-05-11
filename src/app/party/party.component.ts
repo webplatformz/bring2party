@@ -24,7 +24,7 @@ export class PartyComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.forEach((params: Params) => {
-      this.party = this.partyService.loadPartyByUuid(params['uuid']);
+      this.party = this.partyService.getPartyByUuid(params['uuid']);
     });
   }
 

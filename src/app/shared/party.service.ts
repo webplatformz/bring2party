@@ -4,6 +4,7 @@ import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import {Party} from './party';
+import {Operation} from "./operation";
 
 @Injectable()
 export class PartyService {
@@ -11,7 +12,7 @@ export class PartyService {
   constructor(private http: Http) {
   }
 
-  getPartiesFromStore(): Party[]{
+  getParties(): Party[]{
     let storeContent = localStorage.getItem('bring2Party_parties');
     if (storeContent) {
       let jsonObj: any = JSON.parse(storeContent); // string to generic object first
@@ -23,41 +24,23 @@ export class PartyService {
     }
   }
 
-  createPartyToStore(name: string): Party {
+  createParty(name: string): Party {
     let newParty = new Party(name);
-    let parties = this.getPartiesFromStore();
+    let parties = this.getParties();
     parties.push(newParty);
-    this.savePartiesToStore(parties);
-    //todo save operation to stack
-    let operationItem = {
-      "operation": "post",
-      "item": JSON.stringify(newParty)
-    };
-    this.insertOperation(JSON.stringify(operationItem));
-
+    this.saveParties(parties);
+    this.insertOperation(new Operation('post', newParty));
     return newParty;
   }
 
-  savePartiesToStore(parties:Party[]) {
+  saveParties(parties:Party[]) {
     let partiesAsString = JSON.stringify(parties);
     console.log('saving partie to local: ' + parties.length);
     localStorage.setItem('bring2Party_parties', partiesAsString);
   }
 
-  loadParties(): Observable<Party[]> {
-    return this.http.get('/api/_parties')
-      .map(this.extractData)
-      .catch(this.handleError);
-  }
-
-  loadPartyById(id: string): Observable<Party> {
-    return this.http.get(`/api/_parties/${id}`)
-      .map(this.extractData)
-      .catch(this.handleError);
-  }
-
-  loadPartyByUuid(uuid: string): Party {
-    let parties = this.getPartiesFromStore();
+  getPartyByUuid(uuid: string): Party {
+    let parties = this.getParties();
     console.log('searching in parties: ' + parties.length + 'for id ' + uuid);
     let selectedParty = parties.find(item => item.uuid === uuid);
     return selectedParty;
@@ -77,22 +60,18 @@ export class PartyService {
     return body || {};
   }
 
-  addParty(party: Party): Observable<Party> {
-    const headers = new Headers({'Content-Type': 'application/json'});
-
-    return this.http.post('/api/_parties', JSON.stringify(party), {headers})
-      .map(this.extractData)
-      .catch(this.handleError);
+  private insertOperation(operation: Operation) {
+    let ops = this.getOperationsFromStore();
+    ops.push(operation);
+    localStorage.setItem('bring2Party_operations', JSON.stringify(ops));
   }
 
-  private insertOperation(operationItem: string) {
-    localStorage.setItem('bring2Party_operations', '[' + operationItem + ']');
-  }
-
-  getOperationsFromStore() {
+  getOperationsFromStore(): Operation[] {
     let storeContent = localStorage.getItem('bring2Party_operations');
     if (storeContent) {
-      return JSON.parse(storeContent);
+      let jsonObj: any = JSON.parse(storeContent); // string to generic object first
+      let operations: Operation[] = <Operation[]>jsonObj;
+      return operations;
     }
     else {
       return [];
@@ -101,5 +80,27 @@ export class PartyService {
 
   deleteAllOperations() {
     localStorage.removeItem('bring2Party_operations');
+  }
+
+
+  //### ALL remote communication is done here ###
+  loadPartiesFromRemote(): Observable<Party[]> {
+    return this.http.get('/api/_parties')
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
+  loadPartyFromRemoteById(id: string): Observable<Party> {
+    return this.http.get(`/api/_parties/${id}`)
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
+  createPartyToRemote(party: Party): Observable<Party> {
+    const headers = new Headers({'Content-Type': 'application/json'});
+
+    return this.http.post('/api/_parties', JSON.stringify(party), {headers})
+      .map(this.extractData)
+      .catch(this.handleError);
   }
 }
