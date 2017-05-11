@@ -12,15 +12,9 @@ body {
   padding: 0px;
 }
 
-h1,
+h1, h2, h3, h4, h5, h6,
 .padding10 {
   padding: 0px 10px;
-}
-
-h1, h2, h3, h4, h5 {
-  padding: 0 16px;
-  margin: 10px 0 0 0;
-  font-weight: normal;
 }
 
 h1 {
@@ -48,22 +42,12 @@ h2 {
 
 /* concrete elements */
 
-.controls {
-  margin-top: 20px;
-  padding-top: 30px;
-  border-top: 1px solid black;
-}
-
 .party-name-container {
   padding-right: 20px;
 }
 
 .party-name-input {
   width: 100%;
-}
-
-.content {
-  padding: 0 16px;
 }
 
 .loading {

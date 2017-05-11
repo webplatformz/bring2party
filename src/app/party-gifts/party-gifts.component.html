@@ -13,12 +13,12 @@
           <span>{{item.name}}</span>
           <span>{{getRemainingItemCount(item)}}</span>
         </div>
-        <button md-mini-fab (click)="incrementCurrentUserItemCount(item)" *ngIf="hasRemainingItemCount(item)">
-          <md-icon>add</md-icon>
-        </button>
         <button md-mini-fab (click)="decrementCurrentUserItemCount(item)"
                 *ngIf="hasRemainingCurrentUserItemCount(item)">
           <md-icon>remove</md-icon>
+        </button>
+        <button md-mini-fab (click)="incrementCurrentUserItemCount(item)" *ngIf="hasRemainingItemCount(item)">
+          <md-icon>add</md-icon>
         </button>
       </div>
 
