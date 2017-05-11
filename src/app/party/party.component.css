@@ -1,3 +1,19 @@
 .fill-remaining-space {
   flex: 1 1 auto;
 }
+
+.zip {
+  width: 20%;
+}
+
+.city {
+  width: 80%;
+}
+
+.date {
+  width: 50%;
+}
+
+.flex md-input-container + md-input-container {
+  margin-left: 10px;
+}

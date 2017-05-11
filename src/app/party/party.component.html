@@ -4,25 +4,35 @@
 
   <h1>{{party.name}}</h1>
 
-  <md-input-container class="full-width">
-    <input mdInput [(ngModel)]="party.name" name="name" type="text" placeholder="Party Name">
-  </md-input-container>
+  <div class="content">
+    <md-input-container class="full-width">
+      <input mdInput [(ngModel)]="party.name" name="name" type="text" placeholder="Party Name">
+    </md-input-container>
 
-  <md-input-container class="full-width">
-    <input mdInput [(ngModel)]="party.location.address" name="address" type="text" placeholder="Party Address">
-  </md-input-container>
+    <md-input-container class="full-width">
+      <input mdInput [(ngModel)]="party.location.address" name="address" type="text" placeholder="Address">
+    </md-input-container>
 
-  <md-input-container class="full-width">
-    <input mdInput [(ngModel)]="party.location.zip" name="zip" type="text" placeholder="Zip">
-  </md-input-container>
+    <div class="flex">
+      <md-input-container class="zip">
+        <input mdInput [(ngModel)]="party.location.zip" name="zip" type="number" size="6" placeholder="Zip">
+      </md-input-container>
 
-  <md-input-container class="full-width">
-    <input mdInput [(ngModel)]="party.location.city" name="city" type="text" placeholder="City">
-  </md-input-container>
+      <md-input-container class="city">
+        <input mdInput [(ngModel)]="party.location.city" name="city" type="text" placeholder="City">
+      </md-input-container>
+    </div>
 
-  <md-input-container class="full-width">
-    <input mdInput [(ngModel)]="party.date" name="date" type="datetime-local" placeholder="Party Date & Time">
-  </md-input-container>
+    <div class="flex">
+      <md-input-container class="date">
+        <input mdInput [ngModel]="party.date | date:'yyyy-MM-dd'" name="date" type="date" placeholder="Party Date" (click)="datepicker.toggle()" (onOk)="onDateSelected(datepicker.time)" #datepickerRef>
+      </md-input-container>
+
+      <md-input-container class="date">
+        <input mdInput [ngModel]="party.date | date:'HH:mm'" name="time" type="time" placeholder="Party Time" (click)="timepicker.toggle()" (onOk)="onTimeSelected(timepicker.time)" #timepickerRef>
+      </md-input-container>
+    </div>
+  </div>
 
   <h2>Gifts</h2>
 
