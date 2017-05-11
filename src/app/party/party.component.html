@@ -1,28 +1,38 @@
+<app-party-menu></app-party-menu>
+
 <div *ngIf="party">
 
   <h1>{{party.name}}</h1>
 
-  <h2>Party</h2>
+  <div class="content">
+    <md-input-container class="full-width">
+      <input mdInput [(ngModel)]="party.name" name="name" type="text" placeholder="Party Name">
+    </md-input-container>
 
-  <md-input-container class="full-width">
-    <input mdInput [(ngModel)]="party.name" name="name" type="text" placeholder="Name">
-  </md-input-container>
+    <md-input-container class="full-width">
+      <input mdInput [(ngModel)]="party.location.address" name="address" type="text" placeholder="Address">
+    </md-input-container>
 
-  <md-input-container class="full-width">
-    <input mdInput [(ngModel)]="party.location.address" name="address" type="text" placeholder="Address">
-  </md-input-container>
+    <div class="flex">
+      <md-input-container class="zip">
+        <input mdInput [(ngModel)]="party.location.zip" name="zip" type="number" size="6" placeholder="Zip">
+      </md-input-container>
 
-  <md-input-container class="full-width">
-    <input mdInput [(ngModel)]="party.location.zip" name="zip" type="text" placeholder="Zip">
-  </md-input-container>
+      <md-input-container class="city">
+        <input mdInput [(ngModel)]="party.location.city" name="city" type="text" placeholder="City">
+      </md-input-container>
+    </div>
 
-  <md-input-container class="full-width">
-    <input mdInput [(ngModel)]="party.location.city" name="city" type="text" placeholder="City">
-  </md-input-container>
+    <div class="flex">
+      <md-input-container class="date">
+        <input mdInput [ngModel]="party.date | date:'yyyy-MM-dd'" name="date" type="date" placeholder="Party Date" (click)="datepicker.toggle()" (onOk)="onDateSelected(datepicker.time)" #datepickerRef>
+      </md-input-container>
 
-  <md-input-container class="full-width">
-    <input mdInput [(ngModel)]="party.date" name="date" type="datetime-local" placeholder="Date & Time">
-  </md-input-container>
+      <md-input-container class="date">
+        <input mdInput [ngModel]="party.date | date:'HH:mm'" name="time" type="time" placeholder="Party Time" (click)="timepicker.toggle()" (onOk)="onTimeSelected(timepicker.time)" #timepickerRef>
+      </md-input-container>
+    </div>
+  </div>
 
   <h2>Gifts</h2>
 
@@ -31,7 +41,7 @@
     <md-list-item class="flex">
       <div class="flex-container">
         <md-input-container>
-          <input mdInput #newItemName name="newItemName" type="text" placeholder="Name">
+          <input mdInput #newItemName name="newItemName" type="text" placeholder="Item">
         </md-input-container>
         <md-input-container>
           <input mdInput #newItemCount name="newItemCount" type="number" placeholder="Count">
@@ -89,8 +99,7 @@
 
   <div class="controls">
     <button md-raised-button color="primary" (click)="saveParty()">Save Changes</button>
-    <button md-raised-button (click)="cancelParty()">Cancel Party</button>
-    <button md-raised-button (click)="goBack()">Back to Parties ...</button>
+    <button md-raised-button color="warn" (click)="cancelParty()">Cancel Party</button>
   </div>
 
 </div>

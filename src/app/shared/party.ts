@@ -1,6 +1,6 @@
-import { Item } from './item';
-import { Location } from './location';
-import { User } from './user';
+import { Item }       from './item';
+import { Location }   from './location';
+import { User }       from './user';
 
 export class Party {
 
@@ -9,14 +9,16 @@ export class Party {
   name: string;
   location: Location;
   date: Date;
+  user: User;
   items: Item[];
   persons: User[];
 
-  constructor(name: string) {
+  constructor(name: string, user: User) {
     this.name = name;
     this.uuid = this.randomString(8);
     this.location = new Location();
-    this.date;
+    this.date = new Date();
+    this.user = user;
     this.items = [];
     this.persons = [];
   }

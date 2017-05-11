@@ -9,7 +9,9 @@ import {Operation} from "./operation";
 @Injectable()
 export class PartyService {
 
-  constructor(private http: Http) {
+  constructor(
+    private http: Http,
+    private userService: UserService) {
   }
 
   getParties(): Party[]{
@@ -99,6 +101,7 @@ export class PartyService {
   createPartyToRemote(party: Party): Observable<Party> {
     const headers = new Headers({'Content-Type': 'application/json'});
 
+    return this.http.post('/api/_parties', JSON.stringify(new Party(name, this.userService.getUser())), {headers})
     return this.http.post('/api/_parties', JSON.stringify(party), {headers})
       .map(this.extractData)
       .catch(this.handleError);

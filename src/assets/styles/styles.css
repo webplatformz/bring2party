@@ -2,8 +2,27 @@
 
 /* globals */
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Roboto,Helvetica Neue,sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+h1, h2, h3, h4, h5, h6,
+.padding10 {
+  padding: 0px 10px;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 20px;
 }
 
 /* generic elements */
@@ -12,7 +31,8 @@ body {
   display: flex;
 }
 
-.flex-container {
+.flex-container,
+.fill-remaining-space {
   flex-grow: 2;
 }
 
@@ -22,15 +42,14 @@ body {
 
 /* concrete elements */
 
-.controls {
-  margin-top: 20px;
-  padding-top: 30px;
-  border-top: 1px solid black;
-}
-
 .party-name-container {
   padding-right: 20px;
 }
+
 .party-name-input {
   width: 100%;
+}
+
+.loading {
+  margin: 10px;
 }

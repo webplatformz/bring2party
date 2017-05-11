@@ -1,9 +1,9 @@
 import { Component, OnInit }  from '@angular/core';
-import { Location }           from '@angular/common';
 import { Router }             from "@angular/router";
 
 import { Party }              from '../shared/party';
 import { PartyService }       from "../shared/party.service";
+import { UserService }        from "../shared/user.service";
 
 @Component({
   selector: 'app-parties',
@@ -11,15 +11,22 @@ import { PartyService }       from "../shared/party.service";
   styleUrls: ['./parties.component.css']
 })
 export class PartiesComponent implements OnInit {
+
   title = 'Parties';
   parties: Party[];
 
-  constructor(private partyService: PartyService,
-              private location: Location,
-              private router : Router) { }
+  constructor(
+    private partyService: PartyService,
+    private userService: UserService,
+    private router : Router) { }
 
   ngOnInit() {
     this.parties = this.partyService.getParties();
+  }
+
+  private sortParties(parties: Party[]): Party[] {
+    parties.sort((a,b) => { return (a.name || "").localeCompare(b.name || ""); });
+    return parties;
   }
 
   addParty(name: string) {
@@ -49,8 +56,8 @@ export class PartiesComponent implements OnInit {
     });
   }
 
-  goBack(): void {
-    this.location.back();
+  isPartyOfCurrentUser(party: Party) {
+    return this.userService.equals(party.user);
   }
 
 }
