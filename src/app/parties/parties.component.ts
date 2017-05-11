@@ -30,7 +30,7 @@ export class PartiesComponent implements OnInit {
   }
 
   addParty(name: string) {
-    let newParty = this.partyService.createParty(name);
+    let newParty = this.partyService.createParty(name, this.userService.getUser());
     this.parties.unshift(newParty);
     this.router.navigateByUrl(`/party/${newParty.uuid}`);
   }

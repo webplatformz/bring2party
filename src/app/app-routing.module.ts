@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login',  component: LoginComponent },
   { path: 'parties',  component: PartiesComponent },
-  { path: 'party/:uuid', component: PartyComponent }
+  { path: 'party/:uuid', component: PartyComponent },
   { path: 'party-gifts/:id', component: PartyGiftsComponent }
 ];
 

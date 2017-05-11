@@ -5,13 +5,13 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import {Party} from './party';
 import {Operation} from "./operation";
+import {User} from "./user";
 
 @Injectable()
 export class PartyService {
 
   constructor(
-    private http: Http,
-    private userService: UserService) {
+    private http: Http) {
   }
 
   getParties(): Party[]{
@@ -26,8 +26,8 @@ export class PartyService {
     }
   }
 
-  createParty(name: string): Party {
-    let newParty = new Party(name);
+  createParty(name: string, user:User): Party {
+    let newParty = new Party(name, user);
     let parties = this.getParties();
     parties.push(newParty);
     this.saveParties(parties);
@@ -100,8 +100,6 @@ export class PartyService {
 
   createPartyToRemote(party: Party): Observable<Party> {
     const headers = new Headers({'Content-Type': 'application/json'});
-
-    return this.http.post('/api/_parties', JSON.stringify(new Party(name, this.userService.getUser())), {headers})
     return this.http.post('/api/_parties', JSON.stringify(party), {headers})
       .map(this.extractData)
       .catch(this.handleError);

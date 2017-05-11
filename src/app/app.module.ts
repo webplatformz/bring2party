@@ -18,7 +18,7 @@ import { UserService } from "./shared/user.service";
 import { PartiesMenuComponent } from './parties-menu/parties-menu.component';
 import { PartyMenuComponent } from './party-menu/party-menu.component';
 
-let MOCKING : boolean = true;
+let MOCKING : boolean = false;
 
 @NgModule({
   declarations: [

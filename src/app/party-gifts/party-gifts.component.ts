@@ -25,9 +25,9 @@ export class PartyGiftsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.route.params
-      .switchMap((params: Params) => this.partyService.loadPartyById(params['id']))
-      .subscribe(party => this.party = party as Party);
+    this.route.params.forEach((params: Params) => {
+      this.party = this.partyService.getPartyByUuid(params['uuid']);
+    });
   }
 
   hasRemainingItemCount(item: Item): boolean {
