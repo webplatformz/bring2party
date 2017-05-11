@@ -3,6 +3,7 @@ import { Router }             from "@angular/router";
 
 import { Party }              from '../shared/party';
 import { PartyService }       from "../shared/party.service";
+import { UserService }        from "../shared/user.service";
 
 @Component({
   selector: 'app-parties',
@@ -14,8 +15,10 @@ export class PartiesComponent implements OnInit {
   title = 'Parties';
   parties: Party[];
 
-  constructor(private partyService: PartyService,
-              private  router : Router) { }
+  constructor(
+    private partyService: PartyService,
+    private userService: UserService,
+    private router : Router) { }
 
   ngOnInit() {
     this.partyService.loadParties().subscribe(parties => this.parties = parties.reverse());
@@ -26,6 +29,10 @@ export class PartiesComponent implements OnInit {
       this.parties.unshift(party);
       this.router.navigateByUrl(`/party/${party.id}`);
     })
+  }
+
+  isPartyOfCurrentUser(party: Party) {
+    return this.userService.equals(party.user);
   }
 
 }

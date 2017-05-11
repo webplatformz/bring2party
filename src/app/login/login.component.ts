@@ -19,10 +19,11 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.user = new User();
+    this.user = this.userService.createNewEmptyUser();
   }
 
   gotoParties(): void {
+    // TODO: in a real application we would do some authentication and valdation
     this.userService.setUser(this.user);
     let link = ['/parties'];
     this.router.navigate(link);

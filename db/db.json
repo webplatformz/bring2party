@@ -8,6 +8,10 @@
         "zip": "3000",
         "city": "Bern"
       },
+      "user": {
+        "nickname": "Marco",
+        "email": "marco@google.com"
+      },
       "items": [
         {
           "name": "Rueblisalat",
@@ -61,6 +65,10 @@
         "address": "Kirchenweg 5",
         "zip": "4500",
         "city": "Solothurn"
+      },
+      "user": {
+        "nickname": "Payne",
+        "email": "payne@google.com"
       },
       "items": [
         {
@@ -144,6 +152,10 @@
         "zip": "8000",
         "city": "Zürich"
       },
+      "user": {
+        "nickname": "Ben",
+        "email": "ben@google.com"
+      },
       "items": [
         {
           "name": "Chips",
@@ -187,6 +199,10 @@
         "address": "Poststrasse 16",
         "zip": "3000",
         "city": "Bern"
+      },
+      "user": {
+        "nickname": "Marco",
+        "email": "marco@google.com"
       },
       "items": [
         {

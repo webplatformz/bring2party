@@ -38,9 +38,7 @@ export class PartyComponent implements OnInit {
   }
 
   addNewPerson(nickname: string, email: string): void {
-    let newUser = new User();
-    newUser.nickname = nickname;
-    newUser.email = email;
+    let newUser = new User(nickname, email);
     this.party.persons.push(newUser);
   }
 
@@ -49,11 +47,11 @@ export class PartyComponent implements OnInit {
   }
 
   saveParty(): void {
-
+    // TODO
   }
 
   cancelParty(): void {
-
+    // TODO
   }
 
 }

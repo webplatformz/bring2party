@@ -1,14 +1,18 @@
-import {Injectable} from '@angular/core';
-import {Http, Response, Headers} from "@angular/http";
-import {Observable} from 'rxjs/Rx';
+import { Injectable }                 from '@angular/core';
+import { Http, Response, Headers }    from "@angular/http";
+import { Observable }                 from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import {Party} from './party';
+
+import { Party }                      from './party';
+import { UserService }                from "./user.service";
 
 @Injectable()
 export class PartyService {
 
-  constructor(private http: Http) {
+  constructor(
+    private http: Http,
+    private userService: UserService) {
   }
 
   loadParties(): Observable<Party[]> {
@@ -40,7 +44,7 @@ export class PartyService {
   addParty(name: string): Observable<Party> {
     const headers = new Headers({'Content-Type': 'application/json'});
 
-    return this.http.post('/api/_parties', JSON.stringify(new Party(name)), {headers})
+    return this.http.post('/api/_parties', JSON.stringify(new Party(name, this.userService.getUser())), {headers})
       .map(this.extractData)
       .catch(this.handleError);
   }

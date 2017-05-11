@@ -12,12 +12,16 @@
       <input mdInput #partyName name="partyName" type="text" placeholder="New Partyname">
     </md-input-container>
   </div>
-  <button md-raised-button color="primary" (click)="addParty(partyName.value); partyName.value=''">Create Party
-  </button>
+  <button md-raised-button color="primary" (click)="addParty(partyName.value); partyName.value=''">Create Party</button>
 </form>
 
 <md-list>
-  <md-list-item *ngFor="let party of parties" [routerLink]="['/party-gifts', party.id]" class="flex">{{party.name}}</md-list-item>
+  <md-list-item *ngFor="let party of parties" [routerLink]="['/party-gifts', party.id]" class="flex">
+    {{party.name}}
+    <button *ngIf="isPartyOfCurrentUser(party)" [routerLink]="['/party', party.id]">
+      <md-icon>edit</md-icon>
+    </button>
+  </md-list-item>
 </md-list>
 
 <div class="controls">

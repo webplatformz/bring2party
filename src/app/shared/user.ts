@@ -4,4 +4,9 @@ export class User {
   nickname: string;
   email: string;
 
+  constructor(nickname: string, email: string) {
+    this.nickname = nickname;
+    this.email = email;
+  }
+
 }
