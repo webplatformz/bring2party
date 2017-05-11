@@ -12,6 +12,11 @@ body {
   padding: 0px;
 }
 
+h1,
+.padding10 {
+  padding: 0px 10px;
+}
+
 /* generic elements */
 
 .flex {
@@ -41,4 +46,8 @@ body {
 
 .party-name-input {
   width: 100%;
+}
+
+.loading {
+  margin: 10px;
 }
