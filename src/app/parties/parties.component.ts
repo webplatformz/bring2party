@@ -21,7 +21,12 @@ export class PartiesComponent implements OnInit {
     private router : Router) { }
 
   ngOnInit() {
-    this.partyService.loadParties().subscribe(parties => this.parties = parties.reverse());
+    this.partyService.loadParties().subscribe(parties => this.parties = this.sortParties(parties));
+  }
+
+  private sortParties(parties: Party[]): Party[] {
+    parties.sort((a,b) => { return (a.name || "").localeCompare(b.name || ""); });
+    return parties;
   }
 
   addParty(name: string) {

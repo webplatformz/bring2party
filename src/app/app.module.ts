@@ -8,12 +8,15 @@ import { MdInputModule, MdButtonModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { PartyService } from "./shared/party.service";
+import { MockPartyService } from "./mocks/mock-party.service";
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { PartiesComponent } from './parties/parties.component';
 import { PartyComponent } from './party/party.component';
 import { PartyGiftsComponent } from './party-gifts/party-gifts.component';
 import { UserService } from "./shared/user.service";
+
+let MOCKING : boolean = true;
 
 @NgModule({
   declarations: [
@@ -33,9 +36,17 @@ import { UserService } from "./shared/user.service";
     MdButtonModule,
     AppRoutingModule
   ],
-  exports: [ MdButtonModule, MdButtonModule ],
-  providers: [PartyService,UserService],
-  bootstrap: [AppComponent]
+  exports: [
+    MdButtonModule,
+    MdButtonModule
+  ],
+  providers: [
+    { provide: PartyService, useClass: MOCKING ? MockPartyService : PartyService },
+    UserService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule {
 }
