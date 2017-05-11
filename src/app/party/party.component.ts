@@ -1,6 +1,5 @@
 import { Component, OnInit }        from '@angular/core';
 import { ActivatedRoute, Params }   from '@angular/router';
-import { Location }                 from '@angular/common';
 
 import { Party }                    from "../shared/party";
 import { User }                     from "../shared/user";
@@ -18,7 +17,6 @@ export class PartyComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private location: Location,
     private partyService: PartyService
   ) { }
 
@@ -26,10 +24,6 @@ export class PartyComponent implements OnInit {
     this.route.params
       .switchMap((params: Params) => this.partyService.loadPartyById(params['id']))
       .subscribe(party => this.party = party as Party);
-  }
-
-  goBack(): void {
-    this.location.back();
   }
 
   addNewItem(name: string, count: number): void {

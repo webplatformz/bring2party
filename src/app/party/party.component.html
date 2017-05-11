@@ -1,15 +1,19 @@
+<md-toolbar>
+  <span><md-icon [routerLink]="['/parties']">arrow_back</md-icon></span>
+  <span class="fill-remaining-space"></span>
+  <span><md-icon>star_border</md-icon></span>
+</md-toolbar>
+
 <div *ngIf="party">
 
   <h1>{{party.name}}</h1>
 
-  <h2>Party</h2>
-
   <md-input-container class="full-width">
-    <input mdInput [(ngModel)]="party.name" name="name" type="text" placeholder="Name">
+    <input mdInput [(ngModel)]="party.name" name="name" type="text" placeholder="Party Name">
   </md-input-container>
 
   <md-input-container class="full-width">
-    <input mdInput [(ngModel)]="party.location.address" name="address" type="text" placeholder="Address">
+    <input mdInput [(ngModel)]="party.location.address" name="address" type="text" placeholder="Party Address">
   </md-input-container>
 
   <md-input-container class="full-width">
@@ -21,7 +25,7 @@
   </md-input-container>
 
   <md-input-container class="full-width">
-    <input mdInput [(ngModel)]="party.date" name="date" type="datetime-local" placeholder="Date & Time">
+    <input mdInput [(ngModel)]="party.date" name="date" type="datetime-local" placeholder="Party Date & Time">
   </md-input-container>
 
   <h2>Gifts</h2>
@@ -31,7 +35,7 @@
     <md-list-item class="flex">
       <div class="flex-container">
         <md-input-container>
-          <input mdInput #newItemName name="newItemName" type="text" placeholder="Name">
+          <input mdInput #newItemName name="newItemName" type="text" placeholder="Item">
         </md-input-container>
         <md-input-container>
           <input mdInput #newItemCount name="newItemCount" type="number" placeholder="Count">
@@ -89,8 +93,7 @@
 
   <div class="controls">
     <button md-raised-button color="primary" (click)="saveParty()">Save Changes</button>
-    <button md-raised-button (click)="cancelParty()">Cancel Party</button>
-    <button md-raised-button (click)="goBack()">Back to Parties ...</button>
+    <button md-raised-button color="warn" (click)="cancelParty()">Cancel Party</button>
   </div>
 
 </div>
