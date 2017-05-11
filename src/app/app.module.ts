@@ -15,6 +15,8 @@ import { PartiesComponent } from './parties/parties.component';
 import { PartyComponent } from './party/party.component';
 import { PartyGiftsComponent } from './party-gifts/party-gifts.component';
 import { UserService } from "./shared/user.service";
+import { PartiesMenuComponent } from './parties-menu/parties-menu.component';
+import { PartyMenuComponent } from './party-menu/party-menu.component';
 
 let MOCKING : boolean = true;
 
@@ -24,7 +26,9 @@ let MOCKING : boolean = true;
     LoginComponent,
     PartiesComponent,
     PartyComponent,
-    PartyGiftsComponent
+    PartyGiftsComponent,
+    PartiesMenuComponent,
+    PartyMenuComponent
   ],
   imports: [
     BrowserModule,

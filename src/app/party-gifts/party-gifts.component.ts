@@ -72,8 +72,4 @@ export class PartyGiftsComponent implements OnInit {
     return item.claims.find(claim => this.userService.equals(claim.user));
   }
 
-  goBack(): void {
-    this.location.back();
-  }
-
 }
