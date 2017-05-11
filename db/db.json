@@ -147,125 +147,17 @@
       ]
     },
     {
-      "id": "3",
-      "name": "Ben's Beförderung",
-      "location": {
-        "address": "Künstlergasse 14",
-        "zip": "8000",
-        "city": "Zürich"
-      },
-      "date": "2017-05-13T20:00:00.000Z",
-      "user": {
-        "nickname": "Ben",
-        "email": "ben@google.com"
-      },
-      "items": [
-        {
-          "name": "Chips",
-          "count": 10,
-          "claims": [
-            {
-              "user": {
-                "nickname": "Ben",
-                "email": "ben@google.com"
-              },
-              "count": 5
-            },
-            {
-              "user": {
-                "nickname": "Susanne",
-                "email": "susanne@google.com"
-              },
-              "count": 3
-            }
-          ]
-        },
-        {
-          "name": "Bier",
-          "count": 100,
-          "claims": [
-            {
-              "user": {
-                "nickname": "Mirco",
-                "email": "mirco@google.com"
-              },
-              "count": 50
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "4",
-      "name": "Challenge Final Event",
-      "location": {
-        "address": "Poststrasse 16",
-        "zip": "3000",
-        "city": "Bern"
-      },
-      "user": {
-        "nickname": "Marco",
-        "email": "marco@google.com"
-      },
-      "items": [
-        {
-          "name": "Bier",
-          "count": 10,
-          "claims": []
-        },
-        {
-          "name": "Burger",
-          "count": 10,
-          "claims": [
-            {
-              "user": {
-                "nickname": "Simon",
-                "email": "simon@google.com"
-              },
-              "count": 5
-            },
-            {
-              "user": {
-                "nickname": "Ute",
-                "email": "ute@google.com"
-              },
-              "count": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "sd flsadjfsadkfjlsakdf",
+      "name": "test",
+      "uuid": "6OxeAXsu",
       "location": {},
-      "date": "2017-05-11T08:29:36.134Z",
-      "user": {
-        "nickname": "Marco",
-        "email": "marco@google.com"
-      },
-      "items": [],
-      "persons": [],
-      "id": "rk_g-oWg-"
-    },
-    {
-      "name": "",
-      "location": {},
-      "date": "2017-05-11T08:33:56.194Z",
+      "date": "2017-05-11T15:34:49.329Z",
       "user": {
         "nickname": null,
         "email": null
       },
       "items": [],
       "persons": [],
-      "id": "HJ3eMibg-"
-    },
-    {
-      "name": "",
-      "location": {},
-      "date": "2017-05-11T08:37:25.286Z",
-      "items": [],
-      "persons": [],
-      "id": "H166MobeZ"
+      "id": "HkO3EbGg-"
     }
   ]
 }
