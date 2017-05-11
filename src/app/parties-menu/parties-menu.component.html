@@ -1,18 +1,7 @@
 <md-toolbar>
 
-  <span><img src="/assets/images/logo_sm.png"></span>
-
+  <img src="/assets/images/logo_sm.png">
   <span class="fill-remaining-space left-spacer">Bring2Party</span>
-
-  <button md-icon-button [mdMenuTriggerFor]="menu">
-    <md-icon>more_vert</md-icon>
-  </button>
-
-  <md-menu #menu="mdMenu">
-    <button md-menu-item [routerLink]="['/login']">
-      <md-icon>exit_to_app</md-icon>
-      <span>Logout</span>
-    </button>
-  </md-menu>
+  <app-menu></app-menu>
 
 </md-toolbar>

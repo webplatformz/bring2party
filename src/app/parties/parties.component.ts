@@ -60,4 +60,8 @@ export class PartiesComponent implements OnInit {
     return this.userService.equals(party.user);
   }
 
+  getNickname(party: Party): string {
+    return (!party || !party.user || !party.user.nickname) ? '<unknown>' : party.user.nickname;
+  }
+
 }
