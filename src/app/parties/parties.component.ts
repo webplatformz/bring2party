@@ -29,15 +29,19 @@ export class PartiesComponent implements OnInit {
     return parties;
   }
 
-  addParty(name: string) {
+  addParty(name: string): void {
     this.partyService.addParty(name).subscribe(party =>{
       this.parties.unshift(party);
       this.router.navigateByUrl(`/party/${party.id}`);
     })
   }
 
-  isPartyOfCurrentUser(party: Party) {
+  isPartyOfCurrentUser(party: Party): boolean {
     return this.userService.equals(party.user);
+  }
+
+  getNickname(party: Party): string {
+    return (!party || !party.user || !party.user.nickname) ? '<unknown>' : party.user.nickname;
   }
 
 }
