@@ -11,16 +11,20 @@
       "items": [
         {
           "name": "Rueblisalat",
-          "count": 2,
-          "persons": [
+          "count": 3,
+          "claims": [
             {
-              "nickname": "Marco",
-              "email": "",
+              "user": {
+                "nickname": "Marco",
+                "email": "marco@google.com"
+              },
               "count": 1
             },
             {
-              "nickname": "Sarah",
-              "email": "",
+              "user": {
+                "nickname": "Sarah",
+                "email": "sarah@google.com"
+              },
               "count": 1
             }
           ]
@@ -28,17 +32,25 @@
         {
           "name": "Chips",
           "count": 3,
-          "persons": []
+          "claims": []
         },
         {
           "name": "Erdnüssli",
           "count": 1023,
-          "persons": []
+          "claims": []
         },
         {
           "name": "Pouletwürstchen",
           "count": 4,
-          "persons": []
+          "claims": [
+            {
+              "user": {
+                "nickname": "Fabienne",
+                "email": "fabienne@google.com"
+              },
+              "count": 1
+            }
+          ]
         }
       ]
     },
@@ -54,27 +66,73 @@
         {
           "name": "Chips",
           "count": 50,
-          "persons": []
+          "claims": [
+            {
+              "user": {
+                "nickname": "Melanie",
+                "email": "melanie@google.com"
+              },
+              "count": 10
+            },
+            {
+              "user": {
+                "nickname": "Sandro",
+                "email": "sandro@google.com"
+              },
+              "count": 30
+            }
+          ]
         },
         {
           "name": "Champagner",
           "count": 20,
-          "persons": []
+          "claims": [
+            {
+              "user": {
+                "nickname": "Samuel",
+                "email": "samuel@google.com"
+              },
+              "count": 10
+            }
+          ]
         },
         {
           "name": "Bier",
           "count": 20,
-          "persons": []
+          "claims": [
+            {
+              "user": {
+                "nickname": "Raphael",
+                "email": "raphael@google.com"
+              },
+              "count": 20
+            }
+          ]
         },
         {
           "name": "Rotwein",
           "count": 10,
-          "persons": []
+          "claims": [
+            {
+              "user": {
+                "nickname": "Samantha",
+                "email": "samantha@google.com"
+              },
+              "count": 2
+            },
+            {
+              "user": {
+                "nickname": "Christopher",
+                "email": "christopher@google.com"
+              },
+              "count": 6
+            }
+          ]
         },
         {
           "name": "Weisswein",
           "count": 10,
-          "persons": []
+          "claims": []
         }
       ]
     },
@@ -90,12 +148,35 @@
         {
           "name": "Chips",
           "count": 10,
-          "persons": []
+          "claims": [
+            {
+              "user": {
+                "nickname": "Ben",
+                "email": "ben@google.com"
+              },
+              "count": 5
+            },
+            {
+              "user": {
+                "nickname": "Susanne",
+                "email": "susanne@google.com"
+              },
+              "count": 3
+            }
+          ]
         },
         {
           "name": "Bier",
           "count": 100,
-          "persons": []
+          "claims": [
+            {
+              "user": {
+                "nickname": "Mirco",
+                "email": "mirco@google.com"
+              },
+              "count": 50
+            }
+          ]
         }
       ]
     },
@@ -111,14 +192,36 @@
         {
           "name": "Bier",
           "count": 10,
-          "persons": []
+          "claims": []
         },
         {
           "name": "Burger",
           "count": 10,
-          "persons": []
+          "claims": [
+            {
+              "user": {
+                "nickname": "Simon",
+                "email": "simon@google.com"
+              },
+              "count": 5
+            },
+            {
+              "user": {
+                "nickname": "Ute",
+                "email": "ute@google.com"
+              },
+              "count": 1
+            }
+          ]
         }
       ]
+    },
+    {
+      "name": "",
+      "location": {},
+      "items": [],
+      "persons": [],
+      "id": "SyAUX5WxZ"
     }
   ]
 }

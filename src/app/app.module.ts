@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { PartiesComponent } from './parties/parties.component';
 import { PartyComponent } from './party/party.component';
 import { PartyGiftsComponent } from './party-gifts/party-gifts.component';
+import { UserService } from "./shared/user.service";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { PartyGiftsComponent } from './party-gifts/party-gifts.component';
     AppRoutingModule
   ],
   exports: [ MdButtonModule, MdButtonModule ],
-  providers: [PartyService],
+  providers: [PartyService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
