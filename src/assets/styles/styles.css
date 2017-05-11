@@ -18,7 +18,8 @@ body {
   display: flex;
 }
 
-.flex-container {
+.flex-container,
+.fill-remaining-space {
   flex-grow: 2;
 }
 
