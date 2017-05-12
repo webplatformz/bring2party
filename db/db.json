@@ -1,7 +1,7 @@
 {
   "_parties": [
     {
-      "id": "rm0u2t68l0",
+      "uuid": "rm0u2t68l0",
       "name": "Marco's Geburtstag",
       "location": {
         "address": "Zirkusstrasse 87a",
@@ -60,7 +60,7 @@
       ]
     },
     {
-      "id": "aqc3kmfan6",
+      "uuid": "aqc3kmfan6",
       "name": "Payne's Hochzeit",
       "location": {
         "address": "Kirchenweg 5",
@@ -156,8 +156,7 @@
         "email": "test@google.com"
       },
       "items": [],
-      "persons": [],
-      "id": "HkO3EbGg-"
+      "persons": []
     }
   ]
 }
