@@ -43,8 +43,8 @@ export class PartyService {
 
   getPartyByUuid(uuid: string): Party {
     let parties = this.getParties();
-    console.log('searching in parties: ' + parties.length + 'for id ' + uuid);
-    let selectedParty = parties.find(item => item.uuid === uuid);
+    console.log('searching in parties: ' + parties.length + ' for uuid ' + uuid);
+    let selectedParty = parties.find(item => item.uuid == uuid); // ! identity/string
     return selectedParty;
   }
 
