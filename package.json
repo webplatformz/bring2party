@@ -12,7 +12,8 @@
     "e2e": "ng e2e",
     "postinstall":"ng build --prod --aot && npm run sw",
     "sw": "sw-precache --root=dist --config=sw-precache-config.js",
-    "start": "node server.js --verbose"
+    "start": "node server.js --verbose",
+    "app": "ng build --prod --aot && npm run sw && npm run start"
   },
   "engines": {
     "node": "6.9.2"
