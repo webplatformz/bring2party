@@ -1,7 +1,7 @@
 {
   "_parties": [
     {
-      "id": "1",
+      "id": "rm0u2t68l0",
       "name": "Marco's Geburtstag",
       "location": {
         "address": "Zirkusstrasse 87a",
@@ -60,7 +60,7 @@
       ]
     },
     {
-      "id": "2",
+      "id": "aqc3kmfan6",
       "name": "Payne's Hochzeit",
       "location": {
         "address": "Kirchenweg 5",
@@ -152,8 +152,8 @@
       "location": {},
       "date": "2017-05-11T15:34:49.329Z",
       "user": {
-        "nickname": null,
-        "email": null
+        "nickname": "test",
+        "email": "test@google.com"
       },
       "items": [],
       "persons": [],
