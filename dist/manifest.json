@@ -1,0 +1,22 @@
+{
+	"name": "bring2party",
+	"short_name": "bring2party",
+	"icons": [
+		{
+			"src": "/assets/images/icon_144.png",
+			"sizes": "144x144",
+			"type": "image/png"
+		}
+	],
+	"start_url": "./",
+	"display": "standalone",
+	"orientation": "natural",
+	"background_color": "#FFFFFF",
+	"theme_color": "#3F51B5",
+  "related_applications": [
+    {
+      "platform": "play",
+      "id": "com.zuehlke.webdev.bring2party"
+    }
+  ]
+}

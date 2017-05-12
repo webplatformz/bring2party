@@ -11,7 +11,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "sw": "sw-precache --root=dist --config=sw-precache-config.js",
-    "start": "ng build --verbose --prod && node server.js --verbose"
+    "dist": "ng build --prod --aot && npm run sw",
+    "start": "node server.js --verbose"
   },
   "engines": {
     "node": "6.9.2"
