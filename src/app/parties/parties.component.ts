@@ -35,27 +35,6 @@ export class PartiesComponent implements OnInit {
     this.router.navigateByUrl(`/party/${newParty.uuid}`);
   }
 
-  sync() : void {
-    console.log('Sync start');
-    let operations = this.partyService.getOperationsFromStore();
-    operations.forEach(queuedOperation => {
-      //remove item if success or handle properly
-      if (queuedOperation.method === 'post') {
-        console.log('processing post Item from queue');
-        this.partyService.createPartyToRemote(queuedOperation.party).subscribe();
-      }
-    });
-
-    //Delete operations and hope all went well
-    this.partyService.deleteAllOperations();
-
-    //everything from local to server done... read all from server now
-    this.partyService.loadPartiesFromRemote().subscribe(parties => {
-      this.partyService.saveParties(parties);
-      return this.parties = parties.reverse();
-    });
-  }
-
   isPartyOfCurrentUser(party: Party) {
     return this.userService.equals(party.user);
   }
