@@ -10,5 +10,4 @@ app.get('/login', (req, res) => res.sendFile(__dirname + '/dist/index.html'));
 
 app.use(express.static('dist'));
 
-
-app.listen(4200);
+app.listen(process.env.PORT || 4200);
