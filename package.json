@@ -14,7 +14,9 @@
     "start": "ng build --aot --prod && npm run sw && node server.js"
   },
   "engines": {
-    "node": ">=6.2"
+    "node": ">=6.9",
+    "npm": ">=3.10"
+
   },
   "private": true,
   "dependencies": {
