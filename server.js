@@ -1,7 +1,10 @@
+const sslRedirect = require('heroku-ssl-redirect');
 const express = require('express');
 const jsonServer = require('json-server');
 
 const app = express();
+
+app.use(sslRedirect());
 
 app.use('/api', jsonServer.router('db/db.json'));
 app.get('/parties', (req, res) => res.sendFile(__dirname + '/dist/index.html'));
