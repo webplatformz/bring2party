@@ -14,6 +14,13 @@ export class PartyService {
     private http: Http) {
   }
 
+  getUsers(): User[] {
+    let users = [];
+    // TODO: there is no explicit notion of a user object, so we just collect party owners (this will most likely contain duplicates)
+    this.getParties().forEach(party => users.push(party.user));
+    return users;
+  }
+
   getParties(): Party[]{
     let storeContent = localStorage.getItem('bring2Party_parties');
     if (storeContent) {

@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
 
   gotoParties(): void {
     // TODO: in a real application we would do some authentication and valdation
-    this.userService.setUser(this.user);
+    this.userService.loginUser(this.user);
     let link = ['/parties'];
     this.router.navigate(link);
   }
