@@ -61,7 +61,11 @@ export class PartiesComponent implements OnInit {
   }
 
   getNickname(party: Party): string {
-    return (!party || !party.user || !party.user.nickname) ? '<unknown>' : party.user.nickname;
+    return (!party || !party.user || !party.user.nickname || !party.user.nickname.trim()) ? '<unknown>' : party.user.nickname;
+  }
+
+  getEmail(party: Party): string {
+    return (!party || !party.user || !party.user.email || !party.user.email.trim()) ? '' : party.user.email;
   }
 
 }

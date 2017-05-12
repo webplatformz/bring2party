@@ -24,7 +24,7 @@
 
       <ul>
         <li *ngFor="let claim of item.claims">
-          <a href="mailto:{{claim.user.email}}">{{getNickname(claim)}}</a>
+          <a href="mailto:{{getEmail(claim)}}">{{getNickname(claim)}}</a>
           <span>{{claim.count}}</span>
         </li>
       </ul>

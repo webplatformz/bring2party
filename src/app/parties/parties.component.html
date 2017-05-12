@@ -16,7 +16,7 @@
   </md-list-item>
 
   <md-list-item *ngFor="let party of parties" [routerLink]="['/party-gifts', party.id]" class="flex">
-    <div class="flex-container">{{party.name}} <a href="mailto:{{party.user.email}}">{{getNickname(party)}}</a>
+    <div class="flex-container">{{party.name}} <a href="mailto:{{getEmail(party)}}">{{getNickname(party)}}</a>
     </div>
     <button md-mini-fab *ngIf="isPartyOfCurrentUser(party)" [routerLink]="['/party', party.id]">
       <md-icon>edit</md-icon>
