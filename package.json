@@ -4,14 +4,14 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "serve": "ng serve",
     "startMock": "ng serve --mock",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "sw": "sw-precache --root=dist --config=sw-precache-config.js",
-    "app": "ng build --aot --prod && npm run sw && node server.js"
+    "start": "ng build --aot --prod && npm run sw && node server.js"
   },
   "private": true,
   "dependencies": {
