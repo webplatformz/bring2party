@@ -15,10 +15,10 @@
     </button>
   </md-list-item>
 
-  <md-list-item *ngFor="let party of parties" [routerLink]="['/party-gifts', party.id]" class="flex">
+  <md-list-item *ngFor="let party of parties" [routerLink]="['/party-gifts', party.uuid]" class="flex">
     <div class="flex-container">{{party.name}} <a href="mailto:{{getEmail(party)}}">{{getNickname(party)}}</a>
     </div>
-    <button md-mini-fab *ngIf="isPartyOfCurrentUser(party)" [routerLink]="['/party', party.id]">
+    <button md-mini-fab *ngIf="isPartyOfCurrentUser(party)" [routerLink]="['/party', party.uuid]">
       <md-icon>edit</md-icon>
     </button>
   </md-list-item>
