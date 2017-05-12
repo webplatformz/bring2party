@@ -1,3 +1,4 @@
+
 <app-party-menu></app-party-menu>
 
 <div *ngIf="party">
@@ -25,11 +26,11 @@
 
     <div class="flex">
       <md-input-container class="date">
-        <input mdInput [ngModel]="party.date | date:'yyyy-MM-dd'" name="date" type="date" placeholder="Party Date" (click)="datepicker.toggle()" (onOk)="onDateSelected(datepicker.time)" #datepickerRef>
+        <input mdInput [ngModel]="party.date | date:'yyyy-MM-dd'" name="date" type="date" placeholder="Party Date">
       </md-input-container>
 
       <md-input-container class="date">
-        <input mdInput [ngModel]="party.date | date:'HH:mm'" name="time" type="time" placeholder="Party Time" (click)="timepicker.toggle()" (onOk)="onTimeSelected(timepicker.time)" #timepickerRef>
+        <input mdInput [ngModel]="party.date | date:'HH:mm'" name="time" type="time" placeholder="Party Time">
       </md-input-container>
     </div>
   </div>
