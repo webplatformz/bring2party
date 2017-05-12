@@ -21,12 +21,9 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "assets/styles/styles.css",
-        "../node_modules/md-date-time-picker/dist/css/mdDateTimePicker.css"
+        "assets/styles/styles.css"
       ],
       "scripts": [
-        "../node_modules/md-date-time-picker/dist/js/mdDateTimePicker.js",
-        "../node_modules/moment/moment.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
