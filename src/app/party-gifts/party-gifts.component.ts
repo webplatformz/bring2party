@@ -63,7 +63,7 @@ export class PartyGiftsComponent implements OnInit {
     return this.getCurrentUserItemCount(item) > 0;
   }
 
-  isClaimedByCurrentUser(claim: ClaimedItem) : boolean {
+  isClaimOfCurrentUser(claim: ClaimedItem) : boolean {
     return this.userService.equals(claim.user);
   }
 

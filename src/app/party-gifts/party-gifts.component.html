@@ -23,7 +23,7 @@
       </div>
 
       <md-chip-list>
-        <md-chip *ngFor="let claim of item.claims" [color]="isClaimedByCurrentUser(claim) ? 'primary' : 'secondary'" selected="true"><a href="mailto:{{claim.user.email}}">{{getNickname(claim)}}</a> ({{claim.count}})</md-chip>
+        <md-chip *ngFor="let claim of item.claims" [color]="isClaimOfCurrentUser(claim) ? 'primary' : 'secondary'" selected="true"><a href="mailto:{{getEmail(claim)}}">{{getNickname(claim)}}</a> ({{claim.count}})</md-chip>
       </md-chip-list>
 
     </li>
