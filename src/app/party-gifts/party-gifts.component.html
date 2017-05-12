@@ -22,12 +22,9 @@
         </button>
       </div>
 
-      <ul>
-        <li *ngFor="let claim of item.claims">
-          <a href="mailto:{{getEmail(claim)}}">{{getNickname(claim)}}</a>
-          <span>{{claim.count}}</span>
-        </li>
-      </ul>
+      <md-chip-list>
+        <md-chip *ngFor="let claim of item.claims" [color]="isClaimOfCurrentUser(claim) ? 'primary' : 'secondary'" selected="true"><a href="mailto:{{getEmail(claim)}}">{{getNickname(claim)}}</a> ({{claim.count}})</md-chip>
+      </md-chip-list>
 
     </li>
 
